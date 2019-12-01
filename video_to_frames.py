@@ -4,10 +4,10 @@ import sys
 import os
 import cv2
 
-def download_url(url):
-    os.system("youtube-dl --id --restrict-filenames -f best " + url)
+# def download_url(url):
+#   os.system("youtube-dl --id --restrict-filenames -f best " + url)
 
-def cut_to_frames(f_name):
+def cut_to_frames(f_name, start):
     folder = f_name[:-4] + "_frames" 
     os.mkdir(folder)
 
@@ -21,18 +21,22 @@ def cut_to_frames(f_name):
             print("Failed")
             break
 
-        cv2.imwrite(os.path.join(folder,"frame{:d}.jpg".format(count)), image) # save frame as JPG file
+        cv2.imwrite(os.path.join(folder,"{:d}.jpg".format(count+start)), image) # save frame as JPG file
         count += 1
 
-url_bank = tuple(open("/home/bobby/APhotoADay/urlbank", 'r'))
+# url_bank = tuple(open("/home/bobby/APhotoADay/urlbank", 'r'))
 # url_bank = tuple(open(sys.argv[1], 'r'))
 
-for url in url_bank:
-    print("Downloading video...")
-    download_url(url)
+#for url in url_bank:
+#    print("Downloading video...")
+#    download_url(url)
 
-    print("Cutting video to frames...")
-    f_name = url[-11:-1] + ".mp4"
-    cut_to_frames(f_name)
+#    print("Cutting video to frames...")
+#    f_name = url[-11:-1] + ".mp4"
+#    cut_to_frames(f_name)
 
     # print("Completed cutting frames for " + f_name)
+
+
+cut_to_frames (sys.argv[1], int(sys.argv[2]) * 365)
+
