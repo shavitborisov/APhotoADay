@@ -1,0 +1,1 @@
+video_to_frames -> image_compare -> rename -> decimate -> allign_images -> manual_clean -> rename2 -> encode_images

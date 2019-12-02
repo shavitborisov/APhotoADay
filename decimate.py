@@ -1,4 +1,4 @@
-#make a new folder with every ith frame
+# make a new folder with every ith frame
 
 import os
 import sys
