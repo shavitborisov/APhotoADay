@@ -7,6 +7,7 @@ __pycache__/
 data/
 other/
 True_vs_Learned/cache/
+*.mp4
 
 # C extensions
 *.so
