@@ -7,7 +7,12 @@ __pycache__/
 data/
 other/
 True_vs_Learned/cache/
+True_vs_Learned/real_data/
+True_vs_Learned/real_latent/
+True_vs_Learned/fake_data/
+True_vs_Learned/fake_latent/
 *.mp4
+*.csv
 
 # C extensions
 *.so
