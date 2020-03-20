@@ -13,7 +13,6 @@ True_vs_Learned/fake_data/
 True_vs_Learned/fake_latent/
 *.mp4
 *.csv
-*.png
 True_vs_Learned/regression_data/
 
 # C extensions
