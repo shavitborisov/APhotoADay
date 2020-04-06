@@ -2,7 +2,7 @@
 *Project by Jacob Sela and Shavit Borisov
 Supervised by Elad Richardson*
 
-Code for this project can be found on GitHub[^1].
+Code for this project can be found on GitHub[1][^1].
 
 ---
 As the new Spring semester started, we have spent most of the first 2 months on studying the material we would later use in this project. Specifically the *Stanford convolutional neural network course*[^2] and the original paper[^3].
