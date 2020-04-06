@@ -15,7 +15,7 @@ Troubleshooting has been a major issue during this time since we have run into t
 
 The next objective is to find a more robust and accurate path for aging in **StyleGAN**’s latent space. In order to gain some basic intuition, we start by comparing ground truth to an already learned latent direction by [Puzer](https://github.com/Puzer/stylegan-encoder) (in `Play_with_latent_directions.ipynb`) and a simple linear interpolation.
 | ![](https://lh3.googleusercontent.com/luECn19EDoDZz60YzTi2Sn4Na6zhx1cAGFIlwIM9dyYZG3ZpDKtUmY8jVDnaM6bzOIcO1PEENWJyAK2kKCLKY-bPf3wTeCXnyeRDjMefGSaf0ooK9foOJkEcsNMjN53g0Ang0tBl) |
-|:---:|
+|:----:|
 | **Figure 1** Top row is ground truth, second row is Puzer’s latent direction, and the bottom row is linear interpolation between the first and last photo. Photos were taken at equal intervals over roughly a 2 year period (based on a 10 year time period for the video, first photo is at 2:10, last is at 3:00, the whole video takes 4:20) from age 18 and 5 months to 20 and 5 months. Original video can be found [here](https://www.youtube.com/watch?v=zuRd_Eneuk8). |
 
 This shows that on some scale, aging can be approximated linearly, though this proof is a bit contrived, more results are needed, specifically over a larger timescale.
