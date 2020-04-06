@@ -5,7 +5,7 @@ Supervised by Elad Richardson*
 Code for this project can be found on [GitHub](https://github.com/shavitborisov/APhotoADay).
 
 ---
-As the new Spring semester started, we have spent most of the first 2 months on studying the material we would later use in this project. Specifically the [*Stanford convolutional neural network course*](http://cs231n.github.io/) and the [original paper](https://arxiv.org/pdf/1812.04948.pdf).
+As the new Spring semester started, we have spent most of the first 2 months on studying the material we would later use in this project. Specifically the [Stanford convolutional neural network course](http://cs231n.github.io/) and the [original paper](https://arxiv.org/pdf/1812.04948.pdf).
 
 Next, we started tool-building and data collecting. We developed a method of downloading and cutting videos; Downloading was based on the [youtube-dl tool](https://ytdl-org.github.io/youtube-dl/index.html), and cutting the video into frames was done using [opencv](https://opencv.org/).
 
