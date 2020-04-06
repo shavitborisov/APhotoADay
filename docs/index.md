@@ -30,7 +30,7 @@ As the photos start trickling in an issue is arising. It seems the encoder has a
 
 The next step once all of the latent representations are done is to plot the path of the vectors and to check if and where linearity crumbles on a longer timeframe.
 | ![](https://lh3.googleusercontent.com/rmJUelA2b8ygnc8nJp-Jbjys9hCFIUm1cgU4lNN3xsGu64cxPuaVAx5P6UkXMtJR4KnPIDp3UNPnsLrgMDqqz7LVw2aYCSLR7AmN0aaOiDj-zw9YVVauHwvlfdezOOVDwFbYk8YX) |
-|--|
+|---|
 | **Fig 3** Proposed experiments for linearity of aging. The black path is ground truth, the blue dots would be actual frames encoded into the latent space. The colored paths are possible linear models. A ratio has to be found between the distance of the original points used for interpolation and the accuracy of it. |
 
 In order to do this we need to find an empirical tool that decides how good the linear approximation is.
@@ -45,21 +45,21 @@ Once this was done, we built a tool to actually carry out the experiments[^9], a
 When we carried out experiments, we got strange results that were consistent, but not very precise:
 
 | ![](https://lh5.googleusercontent.com/KgYOKeGcuQw0lqniYhaU5j0kzHBZliq7_ab6ts_9ePQR_Mp9ckC96rl13iMvZpcYop4UQlVgt5SCODF9TcwpE0o8URmggpWU1RsMeBQMF7apuzNbO3VNCGLXfUG5Y8tw8USqs53X) | ![](https://lh5.googleusercontent.com/27rB3CfC9L_2uf1E3V-wcfDJOe8J4dl_QPT1ViypJRgzCS67PAcZkRQ-daNBw_WrZvG-pki5-xWVQHSsJPQ10Pv0jEfPxg2dsoyf291uX5ZVYl3nwUjI-E42mPM3A33RRRwY2G_r) |
-|--|--|
+|---|---|
 | **Fig 3.1** The real aging video, subject ages from 16 to almost 22. | **Figure 3.2** The generated video. |
 
 | ![](https://lh6.googleusercontent.com/l2L3klziXsTgypu_GnUgcQxQfkU-webfqAJtRzALvQCEu3VIiEtskXBpskYkS4pMyGZi1ewqfY7Z7PRSy9KJpqp5STbR1Rfa1AUkSIvvcCvEg51ECIqi7TyDJHhyZ1nr-hoJvk0U) |
-|--|
+|---|
 | **Fig 3.3** The error for every age in the interpolation range. Interpolation started at 5840 days old, and ends at 7940 days old. The error is 0 in the edge cases because the interpolation is based off those points. |
 
 The constant nature of the interpolation threw us off, so we conducted another experiment to verify the results, this time with fewer samples as per Elad’s advice.
 
 | ![](https://lh6.googleusercontent.com/NshPkolcWTTMc7Av980urs69Ge6ZL9t8eh5IsvXUpTdDMJaAGX-s8FitQ4hkHtoH8J-rScV8-GbxmkNBIZuM1xMIz-GLaa7uDf5kiazgPx2fcqF4peeYQil5duw4nkedhUDLffkV) | ![](https://lh6.googleusercontent.com/tqji2odxhzK2ajco_kOsDIZYdwTuOPa_Q8UZ5XsGaJYXjt5TSCe3kTom3wSqy-7ZeMUgfsuWxcMxvROslOtFTU-w6cT_W4zQREmIZw7SD0i5e3OtgsnnHS5lXYPcMlrq5kxGBOUE) |
-|--|--|
+|---|---|
 | **Fig 4.1** Real aging video. Starts at 15 and ends at 23. | **Fig 4.2** Generated video. |
 
 | ![](https://lh4.googleusercontent.com/BjQdHUstfTaE9i6S2ltiL8pqblsRa0c3VOa-mMMrrKSl9YidLiaBK-6lGozV1G6kBDNP1ctZEpXceEpmPMSJ4C5SozM6nLVcvyzLL7K_oQhbcj5i30v6-N7fmUWHUT2s_IivTHlq) |
-|--|
+|---|
 | **Fig 4.3** Similar results for the second experiment. |
 
 After this we considered that maybe we didn’t detect a bug in the code, but after thorough review, no bug has been found.
@@ -89,18 +89,18 @@ Again, likely not the optimal set of data to train on but other options have not
 
 We did the process above for three videos, and then tested the model on one of the videos that we trained on (but different target ages then the ones trained on). The results can be seen below:
 | ![](https://lh6.googleusercontent.com/0bAkodpYtKgdmcBPjUFf2d7ji3ZxhUp-5Xzg5CT4sdiMmvrJU8cjw2WB-scpmQCnNqSR4V9U-cjOOL8f--i1m07JrWmgi_maqOdzdhL5_FF7H82QMuGR78pQZjgc1EmH019D9j10) | ![](https://lh6.googleusercontent.com/CCSlfk0ZUHSe-uj0vGZCf3r_miuyOXd-JRXJoBDWBF2WOLc6c_YxatIh9jKs2lLS7WtSAxtZXyfl0ZMoJaYxCeYiFwPgZ9cEDRuTtFQ79-M7NJe72TyL6kdtfKdNs62QWJPYAQGS) |
-|--|--|
+|---|---|
 | **Fig 5.1** Real video. | **Fig 5.2** Generated video (aged from 12 to 24). |
 
 | ![](https://lh4.googleusercontent.com/1wxVxvTzsCvb9Q4MEK30w5oU6iW825JYaZqpDVnT1xgQztmkloLDGs7NtFMlC44B7ICO1aihyHaZjtHtUeZoWhRq8-C4j3LjV5gCO-ryUTPdcilsf3TZsWITMYhK_uyho3PadmLm) |
-|--|
+|---|
 | **Fig 6** MSE over the test data (Same people, different ages from the training data). |
 
 The results do look lifelike and are relatively close to what happened in reality but the interpolation fails in aging past what was shown in the video and just continues to grow out the man’s beard.
 
 We then tested the model on brand new cases (namely our own faces). The results can be seen here:
 | ![](https://lh5.googleusercontent.com/2puTuW5CKpWJD7CHTc-E8YcgD0LlOqioCYzAS8mdDTgKo5W6uir04pcV6VsKFdRDN-M3jiW2Ydy5WlJ4S5UvmBNMZEdLytwStFpaTBN5cT6iXzYJ1dLaGGXxukA0zlj80hbksE-F) | ![](https://lh5.googleusercontent.com/gtk0al-JszOGGeojTF_Oy21gd4JX_viL1KhrBMDrSZpoRAHU_6OzcNYp7S1CVSbKpjQV66iOaEm1hJjwhLjnf1x6Pt3efWSQjRrg0LC0OMFIllLnZHDvpEMwX-DCelP9KjwmHqjG) |
-|--|--|
+|---|---|
 | **Fig 7.1** Jacob's original photo taken. | **Fig 7.2** Generated video. |
 
 The model can’t seem to be able to interpolate on faces it hasn’t seen before, instead trying to match them to something learned. We think this is because of a lack of examples and that the solution would be to train the model on many different types of faces (ranging in age, ethnicity, gender, etc.).
