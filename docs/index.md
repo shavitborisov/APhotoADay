@@ -80,7 +80,7 @@ We attempted to fit a linear regression model to the problem. We used the regres
 (start age, latent representation of start image, target age)/latent representation of target image
 `.
 
-Giving equal weight to each of the components (i.e. each of the $512*18 + 2$ components from the latent vector and the ages). This is most likely not optimal, and greater weight should be given to the age components, but has not yet been.
+Giving equal weight to each of the components (i.e. each of the ![](https://latex.codecogs.com/gif.latex?512\cdot&space;18&space;&plus;&space;2) components from the latent vector and the ages). This is most likely not optimal, and greater weight should be given to the age components, but has not yet been.
 
 We decided to train the model as follows; pick the youngest photo for each person and create pairs with that photo as the start photo and any later photo as the target photo (at the end we need to be able to interpolate continuously onto every age so we thought it would be more helpful to show lots of different target results from a single start photo).
 
