@@ -37,7 +37,7 @@ In order to do this we need to find an empirical tool that decides how good the 
 
 Before beginning developing a tool to carry out the experiments, we first built an automated pipeline for data collection, cleaning, and processing.
 
-Our pipeline[^8] downloads a video, chops it into frames, catalogues them, then throws them into the encoder. This tool has made it significantly easier to try new experiments, as most of the manual work that was done beforehand to get usable data has been automated away.
+Our [pipeline](https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/dataCreator.ipynb) downloads a video, chops it into frames, catalogues them, then throws them into the encoder. This tool has made it significantly easier to try new experiments, as most of the manual work that was done beforehand to get usable data has been automated away.
 
 
 Once this was done, we built a tool to actually carry out the experiments[^9], and to present them nicely[^10]. Given a data set, a start age, and an end age, we create a linear interpolation between the two photos in the latent space. In order to test the fidelity of the interpolation, we see how close it gets to various real data points using the formula $d=(a-p)-((a-p)⋅n)⋅n$, where $a$ is the starting point in the interpolation, $p$ is the point being approximated, and $n$ is the normalized vector between the start and end of the interpolation. Under this formula, $p+d$ is the point on the interpolation line closest to $p$ and is considered to be the interpolation’s approximation for the real value at that age. $d$’s magnitude (in *L2*) is the error in the interpolation. Once this is done for all of the data points in the set, we can maybe start to gain some intuition for how reliable of an interpolation we have.
@@ -106,6 +106,5 @@ We then tested the model on brand new cases (namely our own faces). The results 
 The model can’t seem to be able to interpolate on faces it hasn’t seen before, instead trying to match them to something learned. We think this is because of a lack of examples and that the solution would be to train the model on many different types of faces (ranging in age, ethnicity, gender, etc.).
 
 [^3]: Tang, Xu, et al. “*Face Aging with Identity-Preserved Conditional Generative Adversarial Networks.*” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2018, doi:10.1109/cvpr.2018.00828.
-[^8]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/dataCreator.ipynb
 [^9]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/plotLinearityOfAging.ipynb
 [^10]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/gifLinearityOfAging.ipynb
