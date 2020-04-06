@@ -1,7 +1,5 @@
 # A Photo a Day
-*Project by [Jacob Sela](mailto:jacob.sela123@gmail.com) and [Shavit Borisov](mailto:shavitborisov@gmail.com)*
-
-*Supervised by [Elad Richardson](mailto:elad.richardson@gmail.com)*
+*Project by [Jacob Sela](mailto:jacob.sela123@gmail.com) and [Shavit Borisov](mailto:shavitborisov@gmail.com). Supervised by [Elad Richardson](mailto:elad.richardson@gmail.com).*
 
 Code for this project can be found on [GitHub](https://github.com/shavitborisov/APhotoADay).
 
