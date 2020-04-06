@@ -1,4 +1,4 @@
-# a Photo a Day Diary
+# A Photo a Day
 *Project by Jacob Sela and Shavit Borisov
 Supervised by Elad Richardson*
 
