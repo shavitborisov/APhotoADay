@@ -2,12 +2,12 @@
 *Project by Jacob Sela and Shavit Borisov
 Supervised by Elad Richardson*
 
-Code for this project can be found on GitHub[1][^1].
+Code for this project can be found on [GitHub](https://github.com/shavitborisov/APhotoADay).
 
 ---
-As the new Spring semester started, we have spent most of the first 2 months on studying the material we would later use in this project. Specifically the *Stanford convolutional neural network course*[^2] and the original paper[^3].
+As the new Spring semester started, we have spent most of the first 2 months on studying the material we would later use in this project. Specifically the [*Stanford convolutional neural network course*](http://cs231n.github.io/) and the original paper[^3].
 
-Next, we started tool-building and data collecting. We developed a method of downloading and cutting videos; Downloading was based on the youtube-dl[^4] tool, and cutting the video into frames was done using opencv[^5].
+Next, we started tool-building and data collecting. We developed a method of downloading and cutting videos; Downloading was based on the [youtube-dl tool](https://ytdl-org.github.io/youtube-dl/index.html), and cutting the video into frames was done using [opencv](https://opencv.org/).
 
 We tried building a tool for image comparison. This tool, however, was rather rudimentary, using the L0 norm, and was set aside.
 
@@ -105,11 +105,7 @@ We then tested the model on brand new cases (namely our own faces). The results 
 
 The model can’t seem to be able to interpolate on faces it hasn’t seen before, instead trying to match them to something learned. We think this is because of a lack of examples and that the solution would be to train the model on many different types of faces (ranging in age, ethnicity, gender, etc.).
 
-[^1]: https://github.com/shavitborisov/APhotoADay
-[^2]: http://cs231n.github.io/
 [^3]: Tang, Xu, et al. “*Face Aging with Identity-Preserved Conditional Generative Adversarial Networks.*” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2018, doi:10.1109/cvpr.2018.00828.
-[^4]: https://ytdl-org.github.io/youtube-dl/index.html
-[^5]: https://opencv.org/
 [^6]: https://github.com/Puzer/stylegan-encoder, in `Play_with_latent_directions.ipynb`
 [^7]: Original video: [https://www.youtube.com/watch?v=zuRd_Eneuk8](https://www.youtube.com/watch?v=zuRd_Eneuk8)
 [^8]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/dataCreator.ipynb
