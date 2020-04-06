@@ -13,10 +13,10 @@ We tried building a tool for image comparison. This tool, however, was rather ru
 
 Troubleshooting has been a major issue during this time since we have run into technical difficulties quite a few times. These problems mostly had to do with setting up the environment in the lab for the tools we were building.
 
-The next objective is to find a more robust and accurate path for aging in **StyleGAN**’s latent space. In order to gain some basic intuition, we start by comparing ground truth to an already learned latent direction by Puzer[^6] and a simple linear interpolation.
+The next objective is to find a more robust and accurate path for aging in **StyleGAN**’s latent space. In order to gain some basic intuition, we start by comparing ground truth to an already learned latent direction by [Puzer](https://github.com/Puzer/stylegan-encoder) (in `Play_with_latent_directions.ipynb`) and a simple linear interpolation.
 | ![](https://lh3.googleusercontent.com/luECn19EDoDZz60YzTi2Sn4Na6zhx1cAGFIlwIM9dyYZG3ZpDKtUmY8jVDnaM6bzOIcO1PEENWJyAK2kKCLKY-bPf3wTeCXnyeRDjMefGSaf0ooK9foOJkEcsNMjN53g0Ang0tBl) |
 |--|
-| **Figure 1[^7]** Top row is ground truth, second row is Puzer’s latent direction, and the bottom row is linear interpolation between the first and last photo. Photos were taken at equal intervals over roughly a 2 year period (based on a 10 year time period for the video, first photo is at 2:10, last is at 3:00, the whole video takes 4:20) from age 18 and 5 months to 20 and 5 months. |
+| **Figure 1** Top row is ground truth, second row is Puzer’s latent direction, and the bottom row is linear interpolation between the first and last photo. Photos were taken at equal intervals over roughly a 2 year period (based on a 10 year time period for the video, first photo is at 2:10, last is at 3:00, the whole video takes 4:20) from age 18 and 5 months to 20 and 5 months. Original video can be found [here](https://www.youtube.com/watch?v=zuRd_Eneuk8). |
 
 This shows that on some scale, aging can be approximated linearly, though this proof is a bit contrived, more results are needed, specifically over a larger timescale.
 
@@ -106,8 +106,6 @@ We then tested the model on brand new cases (namely our own faces). The results 
 The model can’t seem to be able to interpolate on faces it hasn’t seen before, instead trying to match them to something learned. We think this is because of a lack of examples and that the solution would be to train the model on many different types of faces (ranging in age, ethnicity, gender, etc.).
 
 [^3]: Tang, Xu, et al. “*Face Aging with Identity-Preserved Conditional Generative Adversarial Networks.*” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2018, doi:10.1109/cvpr.2018.00828.
-[^6]: https://github.com/Puzer/stylegan-encoder, in `Play_with_latent_directions.ipynb`
-[^7]: Original video: [https://www.youtube.com/watch?v=zuRd_Eneuk8](https://www.youtube.com/watch?v=zuRd_Eneuk8)
 [^8]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/dataCreator.ipynb
 [^9]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/plotLinearityOfAging.ipynb
 [^10]: https://github.com/shavitborisov/APhotoADay/blob/master/True_vs_Learned/gifLinearityOfAging.ipynb
