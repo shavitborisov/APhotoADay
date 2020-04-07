@@ -2,3 +2,4 @@ title: A Photo a Day
 description: Aging-process prediction with learning tools. Created by <a href="mailto:jacob.sela123@gmail.com">Jacob Sela</a> and <a href="mailto:shavitborisov@gmail.com">Shavit Borisov</a>. Supervised by <a href="mailto:elad.richardson@gmail.com">Elad Richardson</a>.
 theme: jekyll-theme-slate
 markdown: kramdown
+show_downloads: "true"
