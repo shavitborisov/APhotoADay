@@ -1,6 +1,3 @@
-# A Photo a Day
-*Project by [Jacob Sela](mailto:jacob.sela123@gmail.com) and [Shavit Borisov](mailto:shavitborisov@gmail.com). Supervised by [Elad Richardson](mailto:elad.richardson@gmail.com).*
-
 ---
 
 As the new Spring semester started, we have spent most of the first 2 months on studying the material we would later use in this project. Specifically the [Stanford convolutional neural network course](http://cs231n.github.io/) and the [original paper](https://arxiv.org/pdf/1812.04948.pdf).
