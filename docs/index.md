@@ -14,6 +14,7 @@ We tried building a tool for image comparison. This tool, however, was rather ru
 Troubleshooting has been a major issue during this time since we have run into technical difficulties quite a few times. These problems mostly had to do with setting up the environment in the lab for the tools we were building.
 
 The next objective is to find a more robust and accurate path for aging in **StyleGAN**’s latent space. In order to gain some basic intuition, we start by comparing ground truth to an already learned latent direction by [Puzer](https://github.com/Puzer/stylegan-encoder) (in `Play_with_latent_directions.ipynb`) and a simple linear interpolation.
+
 | picture1 |
 |:----:|
 | **Figure 1** Top row is ground truth, second row is Puzer’s latent direction, and the bottom row is linear interpolation between the first and last photo. Photos were taken at equal intervals over roughly a 2 year period (based on a 10 year time period for the video, first photo is at 2:10, last is at 3:00, the whole video takes 4:20) from age 18 and 5 months to 20 and 5 months. Original video can be found [here](https://www.youtube.com/watch?v=zuRd_Eneuk8). |
@@ -29,6 +30,7 @@ As the photos start trickling in an issue is arising. It seems the encoder has a
 | **Fig 2.1** Original image, frame 1290, age 15. | **Fig 2.2** Generated image. |
 
 The next step once all of the latent representations are done is to plot the path of the vectors and to check if and where linearity crumbles on a longer timeframe.
+
 | picture3 |
 |:---:|
 | **Fig 3** Proposed experiments for linearity of aging. The black path is ground truth, the blue dots would be actual frames encoded into the latent space. The colored paths are possible linear models. A ratio has to be found between the distance of the original points used for interpolation and the accuracy of it. |
@@ -86,6 +88,7 @@ We decided to train the model as follows; pick the youngest photo for each perso
 Again, likely not the optimal set of data to train on but other options have not been tested. Maybe a different subset of the combinations is superior (or maybe even training on all combinations).
 
 We did the process above for three videos, and then tested the model on one of the videos that we trained on (but different target ages then the ones trained on). The results can be seen below:
+
 | picture5.1 | picture5.2 |
 |:---:|:---:|
 | **Fig 5.1** Real video. | **Fig 5.2** Generated video (aged from 12 to 24). |
@@ -97,6 +100,7 @@ We did the process above for three videos, and then tested the model on one of t
 The results do look lifelike and are relatively close to what happened in reality but the interpolation fails in aging past what was shown in the video and just continues to grow out the man’s beard.
 
 We then tested the model on brand new cases (namely our own faces). The results can be seen here:
+
 | picture7.1 | picture7.2 |
 |:---:|:---:|
 | **Fig 7.1** Jacob's original photo taken. | **Fig 7.2** Generated video. |
