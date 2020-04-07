@@ -14,7 +14,7 @@ We tried building a tool for image comparison. This tool, however, was rather ru
 Troubleshooting has been a major issue during this time since we have run into technical difficulties quite a few times. These problems mostly had to do with setting up the environment in the lab for the tools we were building.
 
 The next objective is to find a more robust and accurate path for aging in **StyleGAN**’s latent space. In order to gain some basic intuition, we start by comparing ground truth to an already learned latent direction by [Puzer](https://github.com/Puzer/stylegan-encoder) (in `Play_with_latent_directions.ipynb`) and a simple linear interpolation.
-| ![](https://lh3.googleusercontent.com/luECn19EDoDZz60YzTi2Sn4Na6zhx1cAGFIlwIM9dyYZG3ZpDKtUmY8jVDnaM6bzOIcO1PEENWJyAK2kKCLKY-bPf3wTeCXnyeRDjMefGSaf0ooK9foOJkEcsNMjN53g0Ang0tBl) |
+| picture1 |
 |:----:|
 | **Figure 1** Top row is ground truth, second row is Puzer’s latent direction, and the bottom row is linear interpolation between the first and last photo. Photos were taken at equal intervals over roughly a 2 year period (based on a 10 year time period for the video, first photo is at 2:10, last is at 3:00, the whole video takes 4:20) from age 18 and 5 months to 20 and 5 months. Original video can be found [here](https://www.youtube.com/watch?v=zuRd_Eneuk8). |
 
@@ -24,12 +24,12 @@ In order to continue experimenting we need more data in the latent space. We dow
 
 As the photos start trickling in an issue is arising. It seems the encoder has a difficult time handling child and adolescent photos. A few of the results were a bit unsettling. This will narrow down the usable data to that of adults.
 
-| ![](https://lh5.googleusercontent.com/bWx92-0oAT-mLNwyGc3Zscsje2UXfQ7UfevPDgTX9IUYvbPJjMGXnD9FKGbGeuv4zGU6tvLGmB_BeVeteIok-z-Vnb7zmjlhpjkBIVixRig38Agp2__sscamc2tAC9tOprGvZ6mM) | ![](https://lh6.googleusercontent.com/ufjAFjnM2bokYkq_T8Oh6B6T3orrmA39bBSYVHLwHP9GzITHISvTTSZRAzcZVKudETEgBD-3-q1x6MJUIiEhxIpV-bDVWnTQ2_piWwM_Keu9J2WXLCm6zctTe7UCIqd9PrklwE3j) |
+| picture2.1 | picture2.2 |
 |:---:|:---:|
 | **Fig 2.1** Original image, frame 1290, age 15. | **Fig 2.2** Generated image. |
 
 The next step once all of the latent representations are done is to plot the path of the vectors and to check if and where linearity crumbles on a longer timeframe.
-| ![](https://lh3.googleusercontent.com/rmJUelA2b8ygnc8nJp-Jbjys9hCFIUm1cgU4lNN3xsGu64cxPuaVAx5P6UkXMtJR4KnPIDp3UNPnsLrgMDqqz7LVw2aYCSLR7AmN0aaOiDj-zw9YVVauHwvlfdezOOVDwFbYk8YX) |
+| picture3 |
 |:---:|
 | **Fig 3** Proposed experiments for linearity of aging. The black path is ground truth, the blue dots would be actual frames encoded into the latent space. The colored paths are possible linear models. A ratio has to be found between the distance of the original points used for interpolation and the accuracy of it. |
 
@@ -43,21 +43,21 @@ Once this was done, we built a [tool](https://github.com/shavitborisov/APhotoADa
 
 When we carried out experiments, we got strange results that were consistent, but not very precise:
 
-| ![](https://lh5.googleusercontent.com/KgYOKeGcuQw0lqniYhaU5j0kzHBZliq7_ab6ts_9ePQR_Mp9ckC96rl13iMvZpcYop4UQlVgt5SCODF9TcwpE0o8URmggpWU1RsMeBQMF7apuzNbO3VNCGLXfUG5Y8tw8USqs53X) | ![](https://lh5.googleusercontent.com/27rB3CfC9L_2uf1E3V-wcfDJOe8J4dl_QPT1ViypJRgzCS67PAcZkRQ-daNBw_WrZvG-pki5-xWVQHSsJPQ10Pv0jEfPxg2dsoyf291uX5ZVYl3nwUjI-E42mPM3A33RRRwY2G_r) |
+| picture3.1 | picture3.2 |
 |:---:|:---:|
 | **Fig 3.1** The real aging video, subject ages from 16 to almost 22. | **Figure 3.2** The generated video. |
 
-| ![](https://lh6.googleusercontent.com/l2L3klziXsTgypu_GnUgcQxQfkU-webfqAJtRzALvQCEu3VIiEtskXBpskYkS4pMyGZi1ewqfY7Z7PRSy9KJpqp5STbR1Rfa1AUkSIvvcCvEg51ECIqi7TyDJHhyZ1nr-hoJvk0U) |
+| picture3.3 |
 |:---:|
 | **Fig 3.3** The error for every age in the interpolation range. Interpolation started at 5840 days old, and ends at 7940 days old. The error is 0 in the edge cases because the interpolation is based off those points. |
 
 The constant nature of the interpolation threw us off, so we conducted another experiment to verify the results, this time with fewer samples as per Elad’s advice.
 
-| ![](https://lh6.googleusercontent.com/NshPkolcWTTMc7Av980urs69Ge6ZL9t8eh5IsvXUpTdDMJaAGX-s8FitQ4hkHtoH8J-rScV8-GbxmkNBIZuM1xMIz-GLaa7uDf5kiazgPx2fcqF4peeYQil5duw4nkedhUDLffkV) | ![](https://lh6.googleusercontent.com/tqji2odxhzK2ajco_kOsDIZYdwTuOPa_Q8UZ5XsGaJYXjt5TSCe3kTom3wSqy-7ZeMUgfsuWxcMxvROslOtFTU-w6cT_W4zQREmIZw7SD0i5e3OtgsnnHS5lXYPcMlrq5kxGBOUE) |
+| picture4.1 | picture4.2 |
 |:---:|:---:|
 | **Fig 4.1** Real aging video. Starts at 15 and ends at 23. | **Fig 4.2** Generated video. |
 
-| ![](https://lh4.googleusercontent.com/BjQdHUstfTaE9i6S2ltiL8pqblsRa0c3VOa-mMMrrKSl9YidLiaBK-6lGozV1G6kBDNP1ctZEpXceEpmPMSJ4C5SozM6nLVcvyzLL7K_oQhbcj5i30v6-N7fmUWHUT2s_IivTHlq) |
+| picture4.3 |
 |:---:|
 | **Fig 4.3** Similar results for the second experiment. |
 
@@ -76,10 +76,9 @@ Our conclusion is that there simply is too much noise and/or the feature is stil
 ---
 
 We attempted to fit a linear regression model to the problem. We used the regression library from scikit learn. The input/output pairs were of the form:
-`
+```
 (start age, latent representation of start image, target age)/latent representation of target image
-`.
-
+```
 Giving equal weight to each of the components (i.e. each of the ![](https://latex.codecogs.com/gif.latex?512\cdot&space;18&space;&plus;&space;2) components from the latent vector and the ages). This is most likely not optimal, and greater weight should be given to the age components, but has not yet been.
 
 We decided to train the model as follows; pick the youngest photo for each person and create pairs with that photo as the start photo and any later photo as the target photo (at the end we need to be able to interpolate continuously onto every age so we thought it would be more helpful to show lots of different target results from a single start photo).
@@ -87,18 +86,18 @@ We decided to train the model as follows; pick the youngest photo for each perso
 Again, likely not the optimal set of data to train on but other options have not been tested. Maybe a different subset of the combinations is superior (or maybe even training on all combinations).
 
 We did the process above for three videos, and then tested the model on one of the videos that we trained on (but different target ages then the ones trained on). The results can be seen below:
-| ![](https://lh6.googleusercontent.com/0bAkodpYtKgdmcBPjUFf2d7ji3ZxhUp-5Xzg5CT4sdiMmvrJU8cjw2WB-scpmQCnNqSR4V9U-cjOOL8f--i1m07JrWmgi_maqOdzdhL5_FF7H82QMuGR78pQZjgc1EmH019D9j10) | ![](https://lh6.googleusercontent.com/CCSlfk0ZUHSe-uj0vGZCf3r_miuyOXd-JRXJoBDWBF2WOLc6c_YxatIh9jKs2lLS7WtSAxtZXyfl0ZMoJaYxCeYiFwPgZ9cEDRuTtFQ79-M7NJe72TyL6kdtfKdNs62QWJPYAQGS) |
+| picture5.1 | picture5.2 |
 |:---:|:---:|
 | **Fig 5.1** Real video. | **Fig 5.2** Generated video (aged from 12 to 24). |
 
-| ![](https://lh4.googleusercontent.com/1wxVxvTzsCvb9Q4MEK30w5oU6iW825JYaZqpDVnT1xgQztmkloLDGs7NtFMlC44B7ICO1aihyHaZjtHtUeZoWhRq8-C4j3LjV5gCO-ryUTPdcilsf3TZsWITMYhK_uyho3PadmLm) |
+| picture6 |
 |:---:|
 | **Fig 6** MSE over the test data (Same people, different ages from the training data). |
 
 The results do look lifelike and are relatively close to what happened in reality but the interpolation fails in aging past what was shown in the video and just continues to grow out the man’s beard.
 
 We then tested the model on brand new cases (namely our own faces). The results can be seen here:
-| ![](https://lh5.googleusercontent.com/2puTuW5CKpWJD7CHTc-E8YcgD0LlOqioCYzAS8mdDTgKo5W6uir04pcV6VsKFdRDN-M3jiW2Ydy5WlJ4S5UvmBNMZEdLytwStFpaTBN5cT6iXzYJ1dLaGGXxukA0zlj80hbksE-F) | ![](https://lh5.googleusercontent.com/gtk0al-JszOGGeojTF_Oy21gd4JX_viL1KhrBMDrSZpoRAHU_6OzcNYp7S1CVSbKpjQV66iOaEm1hJjwhLjnf1x6Pt3efWSQjRrg0LC0OMFIllLnZHDvpEMwX-DCelP9KjwmHqjG) |
+| picture7.1 | picture7.2 |
 |:---:|:---:|
 | **Fig 7.1** Jacob's original photo taken. | **Fig 7.2** Generated video. |
 
