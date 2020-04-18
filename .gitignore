@@ -14,6 +14,8 @@ True_vs_Learned/fake_latent/
 *.mp4
 *.csv
 True_vs_Learned/regression_data/
+True_vs_Learned/nl_data
+*.h5
 
 # C extensions
 *.so
