@@ -16,6 +16,7 @@ True_vs_Learned/fake_latent/
 True_vs_Learned/regression_data/
 True_vs_Learned/nl_data
 *.h5
+True_vs_Learned/svc.npy
 
 # C extensions
 *.so
