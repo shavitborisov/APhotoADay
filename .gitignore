@@ -11,12 +11,14 @@ True_vs_Learned/real_data/
 True_vs_Learned/real_latent/
 True_vs_Learned/fake_data/
 True_vs_Learned/fake_latent/
+True_vs_Learned/puzerEQ/
 *.mp4
 *.csv
 True_vs_Learned/regression_data/
 True_vs_Learned/nl_data
 *.h5
 True_vs_Learned/svc.npy
+age.npy
 
 # C extensions
 *.so
