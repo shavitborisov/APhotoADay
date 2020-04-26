@@ -19,6 +19,9 @@ True_vs_Learned/nl_data
 *.h5
 True_vs_Learned/svc.npy
 age.npy
+True_vs_Learned/clean_video1/
+True_vs_Learned/clean_video2/
+True_vs_Learned/clean_video3/
 
 # C extensions
 *.so
