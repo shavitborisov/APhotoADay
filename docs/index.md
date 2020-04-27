@@ -8,6 +8,6 @@ Recent advancements in the fields of generation are promising better results, wi
 - Full report with all explanations can be found in this [Google Doc](https://docs.google.com/document/d/1DC6SfjVyKHy0BKeRXRJV06X712L1GD0OMMX9OSS-u2E/edit?usp=sharing).
 
 ## Screenshots
-![Internal](https://github.com/shavitborisov/APhotoADay/blob/master/Screenshots/Internal_res.png)
-![Jacob](https://github.com/shavitborisov/APhotoADay/blob/master/Screenshots/Jacob_res.png)
-![Shavit](https://github.com/shavitborisov/APhotoADay/blob/master/Screenshots/Shavit_res.png)
+![Internal](../Screenshots/Internal_res.png)
+![Jacob](../Screenshots/Jacob_res.png)
+![Shavit](../Screenshots/Shavit_res.png)
